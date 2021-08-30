@@ -28,9 +28,9 @@ export const QuantityUpdator = ( {prodId} ) => {
     return (  <Container>
         <span className={quant<=product.inventory?"":"insufficient-error-msg"}>
             <div className="quant-updator">
-                <Button variant='outline-danger' size='sm' onClick={(event) => decrement(event)}><BsDashCircle/></Button>
+                <Button variant='danger' size='sm' onClick={(event) => decrement(event)}><BsDashCircle/></Button>
                     <input type="text" value={quant} className={quant<=product.inventory && quant>0?"quant":"quant insufficient-error"} onChange={(event) => validateAndUpdate(event)} />
-                <Button variant='outline-success' size='sm' onClick={(event) => increment(event)}><BsPlusCircle/></Button>
+                <Button variant='success' size='sm' onClick={(event) => increment(event)}><BsPlusCircle/></Button>
             </div>
                 <br/>
         </span>
