@@ -1,8 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { ViewCart } from './pages/ViewCart';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {useSelector} from 'react-redux';
 
 function App() {
+  const cartSize = useSelector(state => state.cart.items.length);
   return (<>
+  
       <Router>
         {/* a topbar could go here */}
         <Switch>
@@ -17,6 +22,12 @@ function App() {
           </Route>
           <Route path="/products">
             product catalog could go here
+          </Route>
+          <Route path="/cart">
+            <ViewCart/>
+          </Route>
+          <Route path="/checkout">
+            checkout form could go here {cartSize}
           </Route>
           <Route path="/admin">
             all admin routes can be nested here
